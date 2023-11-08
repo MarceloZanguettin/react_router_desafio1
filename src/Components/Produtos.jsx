@@ -10,9 +10,17 @@ const Produtos = () => {
       .then((json) => setProdutos(json));
   }, []);
 
+  if (produtos === null) return null;
   return (
     <div className={styles.produtos}>
-      <h1>Produtos</h1>
+      <div>
+        {produtos.map((produto) => (
+          <div key={produto.id}>
+            <img src={produto.fotos[0].src} alt={produto.fotos[0].titulo} />
+            <h1>{produto.nome}</h1>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
