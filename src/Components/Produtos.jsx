@@ -8,7 +8,7 @@ const Produtos = () => {
     fetch('https://ranekapi.origamid.dev/json/api/produto')
       .then((r) => r.json())
       .then((json) => setProdutos(json));
-  });
+  }, []);
 
   return (
     <div className={styles.produtos}>
