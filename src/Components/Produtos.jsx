@@ -14,14 +14,12 @@ const Produtos = () => {
   if (produtos === null) return null;
   return (
     <section className={styles.produtos + ' animeLeft'}>
-      <div>
-        {produtos.map((produto) => (
-          <Link to={`produto/${produto.id}`} key={produto.id}>
-            <img src={produto.fotos[0].src} alt={produto.fotos[0].titulo} />
-            <h1 className={styles.nome}>{produto.nome}</h1>
-          </Link>
-        ))}
-      </div>
+      {produtos.map((produto) => (
+        <Link to={`produto/${produto.id}`} key={produto.id}>
+          <img src={produto.fotos[0].src} alt={produto.fotos[0].titulo} />
+          <h1 className={styles.nome}>{produto.nome}</h1>
+        </Link>
+      ))}
     </section>
   );
 };
